@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use APP\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CongController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\VerifyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +23,14 @@ Route::get('/', function () {
 
 
 Route::post('/',[CongController::class,'tinhtong']);
-// Route::get('/welcome',[WelcomeController::class,'xinchao']);
+Route::get('/welcome',[GroupController::class,'getIndex']);
 // Route::get('/b12',[WelcomeController::class,'chuyen']);
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/user1',[GroupController::class,'user1']);
+    Route::get('/user2',[GroupController::class,'user2']);
+    Route::get('/user3',[GroupController::class,'user3']);
+});
+
+Route::get('/verify',[VerifyController::class,'display']);
+Route::post('/verify',[VerifyController::class,'check']);

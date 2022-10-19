@@ -21,7 +21,18 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1 style="color: red; text-align:center">Chào mừng các bạn đã đến với VNUK</h1>
-        <h1> Link den <a href="/b12">Bt2</a></h1>
+        <h1 style="color: red; text-align:center">Student</h1>
+
+        <?php foreach ($student as $temp) {
+        ?>
+            <h1 style="color: blue; text-align:center">{{$temp['name']}}</h1>
+            <h1 style="color: blue; text-align:center">{{$temp['age']}}</h1>
+            <h1 style="color: blue; text-align:center">{{$temp['class']}}</h1>
+        </br>
+        <?php
+        }
+        ?>
+
+        
     </body>
 </html>
